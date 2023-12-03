@@ -22,7 +22,10 @@ do
    fi
 done
 
-
+##Setting new root password for machines
+read -p 'New root password for all VM machines (one set in /etc/ansible/hosts file): ' newpass
+echo "$newpass" > setup/newpass
+ansible-playbook ansible-playbooks/passwdchange.yml > /dev/null 2>&1
 
 ##write out current crontab
 crontab -l > setup/mycron
