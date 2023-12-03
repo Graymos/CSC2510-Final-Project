@@ -35,6 +35,7 @@ if [[ -z $(grep "${cronpath}" "${pwdpath}/setup/mycron") ]]; then
    crontab setup/mycron
 fi
 
+ansible-playbook ansible-playbooks/replaceFiles.yml > /dev/null 2>&1
 
 ##Clean up
 #rm /setup/mycron
