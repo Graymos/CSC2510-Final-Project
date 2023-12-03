@@ -1,0 +1,48 @@
+
+---
+  - name: Install-NodeJS-Apache-MariaDB-Git-VM2
+    vars:
+      user_data: "{{ lookup('file', '../setup/uservar') }}"
+    hosts: vm2-{{user_data}}
+
+    tasks:
+    - name: Install NodeJS (Debian)
+      apt:
+        name: nodejs
+        state: latest
+      when: ansible_distribution == 'Debian'
+    - name: Install Apache (Debian)
+      apt:
+        name: apache2
+        state: latest
+      when: ansible_distribution == 'Debian'
+    - name: Install MariaDB (Debian)
+      apt:
+        name: mariadb-server
+        state: latest
+      when: ansible_distribution == 'Debian'
+    - name: Install Git (Debian)
+      apt:
+        name: git
+        state: latest
+      when: ansible_distribution == 'Debian'
+    - name: Install NodeJS (RedHat)
+      yum:
+        name: nodejs
+        state: latest
+      when: ansible_distribution == 'RedHat'
+    - name: Install Apache (RedHat)
+      yum:
+        name: apache2
+        state: latest
+      when: ansible_distribution == 'RedHat'
+    - name: Install MariaDB (RedHat)
+      yum:
+        name: mariadb-server
+        state: latest
+      when: ansible_distribution == 'RedHat'
+    - name: Install Git (RedHat)
+      yum:
+        name: git
+        state: latest
+      when: ansible_distribution == 'RedHat'

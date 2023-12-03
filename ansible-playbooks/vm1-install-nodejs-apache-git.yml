@@ -1,0 +1,39 @@
+
+---
+  - name: Install-NodeJS-Apache-Git VM1
+    vars:
+      user_data: "{{ lookup('file', '../setup/uservar') }}"
+    hosts: vm1-{{user_data}}
+
+    tasks:
+    - name: Install NodeJS (Debian)
+      apt:
+        name: nodejs
+        state: latest
+      when: ansible_distribution == 'Debian'
+    - name: Install Apache (Debian)
+      apt:
+        name: apache2
+        state: latest
+      when: ansible_distribution == 'Debian'
+    - name: Install Git (Debian)
+      apt:
+        name: git
+        state: latest
+      when: ansible_distribution == 'Debian'
+
+    - name: Install NodeJS (RedHat)
+      yum:
+        name: nodejs
+        state: latest
+      when: ansible_distribution == 'RedHat'
+    - name: Install Apache (RedHat)
+      yum:
+        name: apache2
+        state: latest
+      when: ansible_distribution == 'RedHat'
+    - name: Install Git (RedHat)
+      yum:
+        name: git
+        state: latest
+      when: ansible_distribution == 'RedHat'
