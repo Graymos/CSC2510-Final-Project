@@ -44,17 +44,17 @@
 
  [ansible-server-dev]
  #IP OF ANSIBLE SERVER HERE:
-
+ 
  [vm1-dev]
  #IP OF WEBSERVER HERE:
-
+ 
  [vm1-dev:vars]
  ansible_user=root
- ansible_password=mickey2023
+ ansible_password=
 
  [vm2-dev]
  #IP OF WEB/DATABASE SERVER HERE:
-
+ 
  [vm2-dev:vars]
  ansible_user=root
- ansible_password=mickey2023
+ ansible_password=
