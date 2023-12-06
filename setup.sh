@@ -38,8 +38,6 @@ if [[ -z $(grep "${cronpath}" "${pwdpath}/setup/mycron") ]]; then
    crontab setup/mycron
 fi
 
+#Replaces sshd_config on VM1 and VM2
 ansible-playbook ansible-playbooks/replaceFiles.yml > /dev/null 2>&1
 
-##Clean up
-#rm /setup/mycron
-#rm /setup/uservar

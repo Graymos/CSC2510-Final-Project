@@ -42,15 +42,18 @@
 
 ## db-[99:101]-node.example.com
 
+ [ansible-server-dev]
+ #IP OF ANSIBLE SERVER HERE:
+
  [vm1-dev]
- 10.128.0.13
+ #IP OF WEBSERVER HERE:
 
  [vm1-dev:vars]
  ansible_user=root
  ansible_password=mickey2023
 
  [vm2-dev]
- 10.128.0.16
+ #IP OF WEB/DATABASE SERVER HERE:
 
  [vm2-dev:vars]
  ansible_user=root
